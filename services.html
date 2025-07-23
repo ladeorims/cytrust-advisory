@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services - Cytrust Advisory</title>
+    <!-- Favicon -->
+    <link rel="icon" href="assets/logo 3.png" type="image/png">
+    <!-- Load Tailwind CSS for utility-first styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome for social icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Custom CSS for Google Fonts */
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Poppins:wght@400;600;700&family=Lato:wght@300;400;700&display=swap');
+
+        /* Apply Montserrat for the header title, Poppins for other headings, and Lato for body text */
+        .font-montserrat {
+            font-family: 'Montserrat', sans-serif;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+        }
+        body {
+            font-family: 'Lato', sans-serif;
+            /* Apply the new Light Mist background color */
+            background-color: var(--color-background-light-mist); /* Light Mist */
+        }
+
+        /* Custom Tailwind Configuration - Defining NEW brand colors as CSS variables */
+        :root {
+            --color-primary-deep-midnight-blue: #1A2A40;
+            --color-secondary-cyber-teal: #00CED1;
+            --color-accent1-polished-silver: #B0BEC5;
+            --color-accent2-dark-ash-gray: #4F5B62;
+            --color-background-light-mist: #F8F8F8;
+        }
+
+        /* Custom classes using CSS variables for easier use with Tailwind */
+        .bg-deep-midnight-blue { background-color: var(--color-primary-deep-midnight-blue); }
+        .text-cyber-teal { color: var(--color-secondary-cyber-teal); }
+        .text-polished-silver { color: var(--color-accent1-polished-silver); }
+        .text-dark-ash-gray { color: var(--color-accent2-dark-ash-gray); }
+        .bg-light-mist { background-color: var(--color-background-light-mist); }
+
+        /* Hero Section Styling (for consistency with internal pages) */
+        .hero-section-page-banner {
+            background-color: var(--color-primary-deep-midnight-blue);
+            background-image:
+                linear-gradient(to bottom, rgba(26, 42, 64, 0.95) 0%, rgba(26, 42, 64, 0.7) 100%),
+                url('assets/your-cyber-background.jpg'); /* Using your specified background image */
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed; /* Parallax effect */
+            background-blend-mode: overlay;
+            min-height: 40vh; /* Shorter banner height for internal pages */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero-section-page-banner h1 {
+            text-shadow: 0 0 12px rgba(0, 206, 209, 0.6), 0 0 20px rgba(0, 206, 209, 0.3);
+        }
+        @media (max-width: 768px) {
+            .hero-section-page-banner {
+                min-height: 30vh;
+                padding: 1rem;
+                background-attachment: scroll; /* Disable fixed attachment on mobile for performance */
+            }
+        }
+
+        /* Mobile navigation specific styles (from Home Page, for consistency) */
+        #mobile-menu {
+            transition: max-height 0.3s ease-out;
+            max-height: 0;
+            overflow: hidden;
+        }
+        #mobile-menu.open {
+            max-height: 300px;
+        }
+
+        /* Call to Action Section with Straight Top Edge (consistent with About Us page) */
+        .cta-section-straight {
+            background-image:
+                linear-gradient(to bottom, rgba(26, 42, 64, 0.95) 0%, rgba(26, 42, 64, 0.7) 100%), /* Stronger, subtle gradient overlay */
+                url('assets/your-cyber-background.jpg'); /* Direct path to your abstract tech image */
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed; /* Creates a subtle parallax effect */
+            background-blend-mode: overlay; /* Blends the image with the gradient */
+            position: relative;
+            padding-top: 6rem;
+            padding-bottom: 4rem;
+            /* clip-path removed for straight edge */
+            margin-top: -4rem;
+            z-index: 10;
+        }
+        @media (max-width: 768px) {
+            .cta-section-straight {
+                margin-top: -2rem;
+                padding-top: 4rem;
+                background-attachment: scroll; /* Disable fixed attachment on mobile for performance */
+            }
+        }
+
+        /* --- Styles for Scroll Animations (Consistent) --- */
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(20px); /* Start slightly below */
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out; /* Smooth transition */
+        }
+
+        .fade-in-section.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Optional: Delay for child elements within a section */
+        .fade-in-section > * {
+            transition-delay: 0.1s; /* Applies a slight delay to direct children */
+        }
+        .fade-in-section > *:nth-child(2) { transition-delay: 0.2s; }
+        .fade-in-section > *:nth-child(3) { transition-delay: 0.3s; }
+        .fade-in-section > *:nth-child(4) { transition-delay: 0.4s; }
+        /* You can extend this for more children or use different approaches */
+
+        /* --- Enhanced Shadows and Button Hover Effects (Consistent) --- */
+
+        /* Deeper, more refined shadow for cards/boxes */
+        .shadow-premium {
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.2), 0 8px 10px -6px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Hover effect for service cards (already has scale, adding subtle shadow shift) */
+        .service-card-hover:hover {
+            transform: scale(1.03); /* Slightly more pronounced scale */
+            box-shadow: 0 15px 35px -8px rgba(0, 0, 0, 0.3), 0 10px 15px -7px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Button Hover Glow Effect */
+        .btn-glow-hover {
+            position: relative;
+            overflow: hidden; /* Ensures glow doesn't overflow button */
+            z-index: 1; /* Ensures button content is above glow */
+        }
+
+        .btn-glow-hover::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: radial-gradient(circle, var(--color-secondary-cyber-teal) 0%, transparent 70%);
+            opacity: 0;
+            transform: translate(-50%, -50%);
+            transition: width 0.4s ease-out, height 0.4s ease-out, opacity 0.4s ease-out;
+            z-index: -1; /* Puts glow behind button content */
+        }
+
+        .btn-glow-hover:hover::before {
+            width: 200%; /* Expand glow */
+            height: 200%; /* Expand glow */
+            opacity: 0.3; /* Make glow visible */
+        }
+
+        /* Alternative button hover for main CTA (subtle scale and darker background) */
+        .btn-main-cta:hover {
+            transform: scale(1.03); /* Slightly more pronounced scale */
+            background-color: var(--color-secondary-cyber-teal); /* Ensure consistent teal on hover */
+            box-shadow: 0 8px 20px rgba(0, 206, 209, 0.4); /* Add a teal-tinted shadow */
+        }
+
+        /* --- Back to Top Button Styles --- */
+        #back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background-color: var(--color-secondary-cyber-teal);
+            color: white;
+            padding: 0.75rem;
+            border-radius: 9999px; /* Fully rounded */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0; /* Hidden by default */
+            visibility: hidden; /* Hidden by default */
+            transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out, transform 0.3s ease-in-out;
+            z-index: 50; /* Ensure it's above other content */
+            box-shadow: 0 4px 10px rgba(0, 206, 209, 0.3); /* Subtle glow shadow */
+        }
+
+        #back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        #back-to-top:hover {
+            transform: translateY(-3px) scale(1.05); /* Slight lift and scale on hover */
+            box-shadow: 0 6px 15px rgba(0, 206, 209, 0.5); /* More pronounced glow on hover */
+        }
+
+        /* Icon styling for the back to top button */
+        #back-to-top svg {
+            width: 1.5rem;
+            height: 1.5rem;
+        }
+
+        /* --- Particle Canvas Styles for Hero Section --- */
+        .particle-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0; /* Behind content */
+            pointer-events: none; /* Allow clicks to pass through */
+        }
+
+        /* Ensure hero content is above the canvas */
+        .hero-banner-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* --- Footer Specific Styles --- */
+        .footer-link-hover:hover {
+            color: var(--color-secondary-cyber-teal);
+            transform: translateX(5px);
+        }
+
+        /* Specific styles for "What We Do" cards hover on About Us page */
+        .what-we-do-card {
+            transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+        .what-we-do-card:hover {
+            background-color: rgba(176, 190, 197, 0.4); /* Polished Silver with 40% opacity (transparent) */
+        }
+        .what-we-do-card:hover h3,
+        .what-we-do-card:hover p {
+            color: var(--color-primary-deep-midnight-blue); /* Midnight blue for text */
+        }
+
+        /* Styles for the service cards on the Services page */
+        .service-page-card {
+            transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+        .service-page-card:hover {
+            transform: scale(1.03); /* Slightly more pronounced scale */
+            box-shadow: 0 15px 35px -8px rgba(0, 0, 0, 0.3), 0 10px 15px -7px rgba(0, 0, 0, 0.2);
+        }
+        /* Specific button styling for visibility and hover */
+        .btn-visible-dark {
+            background-color: transparent;
+            color: var(--color-primary-deep-midnight-blue);
+            border: 1px solid var(--color-primary-deep-midnight-blue);
+            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+        }
+        .btn-visible-dark:hover {
+            background-color: var(--color-secondary-cyber-teal);
+            color: white;
+            border-color: var(--color-secondary-cyber-teal);
+        }
+        .btn-visible-white-border {
+            background-color: transparent;
+            color: white;
+            border: 1px solid white;
+            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+        }
+        .btn-visible-white-border:hover {
+            background-color: var(--color-secondary-cyber-teal);
+            color: white;
+            border-color: var(--color-secondary-cyber-teal);
+        }
+    </style>
+</head>
+<body>
+
+    <header class="bg-deep-midnight-blue text-white py-4 shadow-md">
+        <nav class="container mx-auto flex justify-between items-center px-4 border-b border-cyber-teal pb-4">
+            <!-- Logo and Company Name Group -->
+            <div class="flex items-center space-x-3">
+                <!-- "CA" Logo Image - Using logo 3.png for contrast -->
+                <a href="index.html" class="flex items-center space-x-3 group">
+                    <img src="assets/logo 3.png" alt="Cytrust Advisory CA Logo" class="h-12 w-12 object-contain">
+                    <!-- "Cytrust Advisory" text using Montserrat font, adjusted size -->
+                    <div class="text-xl font-bold text-cyber-teal font-montserrat">Cytrust Advisory</div>
+                </a>
+            </div>
+
+            <!-- Hamburger menu button for mobile -->
+            <button id="menu-button" class="md:hidden text-white focus:outline-none">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+
+            <!-- Desktop Navigation Links - UPDATED LINKS -->
+            <div class="hidden md:flex space-x-8">
+                <a href="index.html" class="text-white hover:text-cyber-teal px-3 py-2 rounded-md transition-all duration-300 border border-transparent hover:border-cyber-teal hover:bg-gray-800 hover:bg-opacity-20">Home</a>
+                <a href="about.html" class="text-white hover:text-cyber-teal px-3 py-2 rounded-md transition-all duration-300 border border-transparent hover:border-cyber-teal hover:bg-gray-800 hover:bg-opacity-20">About Us</a>
+                <a href="services.html" class="text-cyber-teal px-3 py-2 rounded-md transition-all duration-300 border border-transparent hover:border-cyber-teal hover:bg-gray-800 hover:bg-opacity-20">Services</a> <!-- Active link -->
+                <a href="mentorship.html" class="text-white hover:text-cyber-teal px-3 py-2 rounded-md transition-all duration-300 border border-transparent hover:border-cyber-teal hover:bg-gray-800 hover:bg-opacity-20">Mentorship</a>
+                <a href="contact.html" class="text-white hover:text-cyber-teal px-3 py-2 rounded-md transition-all duration-300 border border-transparent hover:border-cyber-teal hover:bg-gray-800 hover:bg-opacity-20">Contact</a>
+            </div>
+        </nav>
+
+        <!-- Mobile Navigation Menu (hidden by default) - UPDATED LINKS -->
+        <div id="mobile-menu" class="md:hidden bg-deep-midnight-blue pb-4">
+            <div class="flex flex-col items-center space-y-4 px-4">
+                <a href="index.html" class="block text-white hover:text-cyber-teal py-2 transition-colors duration-300 w-full text-center">Home</a>
+                <a href="about.html" class="block text-white hover:text-cyber-teal py-2 transition-colors duration-300 w-full text-center">About Us</a>
+                <a href="services.html" class="block text-cyber-teal py-2 transition-colors duration-300 w-full text-center">Services</a> <!-- Active link -->
+                <a href="mentorship.html" class="block text-white hover:text-cyber-teal py-2 transition-colors duration-300 w-full text-center">Mentorship</a>
+                <a href="contact.html" class="block text-white hover:text-cyber-teal py-2 transition-colors duration-300 w-full text-center">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Services Page Hero/Banner Section -->
+        <section class="hero-section-page-banner">
+            <!-- Canvas for particle animation -->
+            <canvas id="services-particles-canvas" class="particle-canvas"></canvas>
+
+            <div class="container mx-auto max-w-4xl hero-banner-content">
+                <h1 class="text-5xl md:text-6xl font-extrabold leading-tight mb-4 text-cyber-teal">
+                    Our Comprehensive Services
+                </h1>
+                <p class="text-lg md:text-xl text-polished-silver leading-relaxed">
+                    Tailored cybersecurity solutions for your unique needs.
+                </p>
+            </div>
+        </section>
+
+        <!-- GRC/Cybersecurity Consulting Section -->
+        <section class="py-16 px-4 bg-light-mist fade-in-section">
+            <div class="container mx-auto max-w-6xl">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                    <div class="order-2 md:order-1 text-center md:text-left">
+                        <h2 class="text-4xl font-bold text-deep-midnight-blue mb-6">GRC/Cybersecurity Consulting</h2>
+                        <p class="text-dark-ash-gray text-lg leading-relaxed mb-8 text-justify">
+                            Navigate the intricate landscape of governance, risk, and compliance with Cytrust Advisory. Our expert consultants provide strategic guidance and practical solutions to help your organization establish robust cybersecurity frameworks, meet regulatory obligations (like ISO 27001, NIST, GDPR, HIPAA), and effectively manage cyber risks. From developing comprehensive security policies to conducting risk assessments and implementing compliance programs, we ensure your business is secure and resilient.
+                        </p>
+                        <a href="contact.html" class="font-bold py-3 px-8 rounded-full text-lg shadow-lg transition-all duration-300 transform inline-block btn-visible-dark">
+                            Schedule a Consultation
+                        </a>
+                    </div>
+                    <div class="order-1 md:order-2 flex justify-center">
+                        <!-- Image for GRC Consulting - Path restored -->
+                        <img src="assets/grc_consulting.jpg" alt="Cybersecurity Consulting" class="rounded-lg shadow-2xl max-w-full h-auto shadow-premium">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Security Awareness Training Section -->
+        <section class="py-16 px-4 bg-deep-midnight-blue text-white fade-in-section">
+            <div class="container mx-auto max-w-6xl">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                    <div class="text-center md:text-left">
+                        <!-- Image for Security Training - Path restored -->
+                        <img src="assets/security_training.jpg" alt="Security Awareness Training" class="rounded-lg shadow-2xl max-w-full h-auto shadow-premium">
+                    </div>
+                    <div class="text-center md:text-left">
+                        <h2 class="text-4xl font-bold text-cyber-teal mb-6">Security Awareness Training</h2>
+                        <p class="text-polished-silver text-lg leading-relaxed mb-8 text-justify">
+                            Your employees are your first line of defense against cyber threats. Our engaging and interactive security awareness training programs empower your team with the knowledge and skills to identify, avoid, and report phishing attempts, social engineering tactics, and other common cyber risks. We tailor our training to your organization's specific needs and industry, ensuring practical relevance and maximum impact, transforming your workforce into a strong human firewall.
+                        </p>
+                        <a href="contact.html" class="font-bold py-3 px-8 rounded-full text-lg shadow-lg transition-all duration-300 transform inline-block btn-visible-white-border">
+                            Train Your Team
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Paid Mentorship Section -->
+        <section class="py-16 px-4 bg-light-mist fade-in-section">
+            <div class="container mx-auto max-w-6xl">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                    <div class="order-2 md:order-1 text-center md:text-left">
+                        <h2 class="text-4xl font-bold text-deep-midnight-blue mb-6">Paid Mentorship Programs</h2>
+                        <p class="text-dark-ash-gray text-lg leading-relaxed mb-8 text-justify">
+                            Accelerate your career in cybersecurity with personalized guidance from seasoned industry professionals. Our paid mentorship programs offer structured cohort learning and flexible 1-on-1 spot coaching sessions designed to help aspiring and current cybersecurity professionals navigate career paths, master advanced concepts, and build essential skills. Whether you're looking to break into the field, specialize in GRC, or advance to a leadership role, our mentors provide invaluable insights and support.
+                        </p>
+                        <a href="mentorship.html" class="font-bold py-3 px-8 rounded-full text-lg shadow-lg transition-all duration-300 transform inline-block btn-visible-dark">
+                            Explore Mentorship
+                        </a>
+                    </div>
+                    <div class="order-1 md:order-2 flex justify-center">
+                        <!-- Image for Mentorship - Path restored -->
+                        <img src="assets/mentorship_program.jpg" alt="Cybersecurity Mentorship" class="rounded-lg shadow-2xl max-w-full h-auto shadow-premium">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action Section (consistent with other pages) -->
+        <section class="cta-section-straight text-white py-16 px-4 text-center fade-in-section">
+            <div class="container mx-auto max-w-3xl">
+                <h2 class="text-4xl md:text-5xl font-bold leading-tight mb-6 text-white">
+                    Ready to Strengthen Your Security Posture?
+                </h2>
+                <p class="text-lg md:text-xl mb-8 text-white">
+                    Connect with Cytrust Advisory today for expert consulting, tailored training, or career mentorship.
+                </p>
+                <a href="contact.html" class="bg-cyber-teal text-white font-bold py-3 px-8 rounded-full text-lg transition-all duration-300 transform inline-block btn-main-cta border border-white">
+                    Schedule a Consultation
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" title="Go to top">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
+        </svg>
+    </button>
+
+    <footer class="bg-deep-midnight-blue text-white py-12 mt-16">
+        <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
+            <!-- Column 1: Logo and Short Description -->
+            <div class="flex flex-col items-center md:items-start">
+                <a href="index.html" class="flex items-center space-x-3 mb-4 group">
+                    <img src="assets/logo 3.png" alt="Cytrust Advisory CA Logo" class="h-10 w-10 object-contain">
+                    <div class="text-xl font-bold text-cyber-teal font-montserrat">Cytrust Advisory</div>
+                </a>
+                <p class="text-polished-silver text-sm leading-relaxed">
+                    Empowering cybersecurity confidence through expert consulting, engaging training, and practical mentorship.
+                </p>
+            </div>
+
+            <!-- Column 2: Quick Links -->
+            <div>
+                <h3 class="text-xl font-semibold text-cyber-teal mb-4">Quick Links</h3>
+                <ul class="space-y-2">
+                    <li><a href="index.html" class="text-polished-silver hover:text-cyber-teal transition-colors duration-300 footer-link-hover">Home</a></li>
+                    <li><a href="about.html" class="text-polished-silver hover:text-cyber-teal transition-colors duration-300 footer-link-hover">About Us</a></li>
+                    <li><a href="services.html" class="text-polished-silver hover:text-cyber-teal transition-colors duration-300 footer-link-hover">Services</a></li>
+                    <li><a href="mentorship.html" class="text-polished-silver hover:text-cyber-teal transition-colors duration-300 footer-link-hover">Mentorship</a></li>
+                    <li><a href="contact.html" class="text-polished-silver hover:text-cyber-teal transition-colors duration-300 footer-link-hover">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 3: Contact & Social -->
+            <div>
+                <h3 class="text-xl font-semibold text-cyber-teal mb-4">Contact & Connect</h3>
+                <div class="space-y-2 text-polished-silver">
+                    <p class="flex items-center justify-center md:justify-start space-x-2">
+                        <i class="fas fa-map-marker-alt text-cyber-teal"></i>
+                        <span>337 194 Ave SW Calgary, Alberta, Canada</span>
+                    </p>
+                    <p class="flex items-center justify-center md:justify-start space-x-2">
+                        <i class="fas fa-phone text-cyber-teal"></i>
+                        <span>+1 (368) 399-4114</span>
+                    </p>
+                    <p class="flex items-center justify-center md:justify-start space-x-2">
+                        <i class="fas fa-envelope text-cyber-teal"></i>
+                        <a href="mailto:info@cytrustadvisory.com" class="hover:text-cyber-teal transition-colors duration-300">info@cytrustadvisory.com</a>
+                    </p>
+                </div>
+                <!-- Removed social media icons as requested -->
+            </div>
+        </div>
+
+        <div class="container mx-auto border-t border-dark-ash-gray pt-8 mt-8 text-center text-polished-silver text-sm">
+            <p>&copy; 2025 Cytrust Advisory. All rights reserved.</p>
+            <div class="mt-2 space-x-4">
+                <a href="#" class="hover:text-cyber-teal transition-colors duration-300">Privacy Policy</a>
+                <span class="text-dark-ash-gray">|</span>
+                <a href="#" class="hover:text-cyber-teal transition-colors duration-300">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // JavaScript for mobile menu toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuButton = document.getElementById('menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            if (menuButton && mobileMenu) {
+                menuButton.addEventListener('click', function() {
+                    mobileMenu.classList.toggle('open');
+                });
+            }
+
+            // --- JavaScript for Scroll Animations ---
+            const fadeInSections = document.querySelectorAll('.fade-in-section');
+
+            const observerOptions = {
+                root: null, // viewport as root
+                rootMargin: '0px',
+                threshold: 0.1 // Trigger when 10% of the element is visible
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target); // Stop observing once visible
+                    }
+                });
+            }, observerOptions);
+
+            fadeInSections.forEach(section => {
+                observer.observe(section);
+            });
+
+            // --- Back to Top Button ---
+            const backToTopButton = document.getElementById('back-to-top');
+
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 300) { // Show button after scrolling 300px
+                    backToTopButton.classList.add('show');
+                } else {
+                    backToTopButton.classList.remove('show');
+                }
+            });
+
+            backToTopButton.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth' // Smooth scroll to top
+                });
+            });
+
+            // --- Particle Background Animation JavaScript (Reusable Function) ---
+            function createParticleAnimation(canvasId, particleColor = 'rgba(0, 206, 209,', particleCount = 70, maxDistance = 120) {
+                const canvas = document.getElementById(canvasId);
+                if (!canvas) {
+                    console.warn(`Canvas with ID '${canvasId}' not found.`);
+                    return;
+                }
+                const ctx = canvas.getContext('2d');
+                let particles = [];
+                let animationFrameId;
+
+                function resizeCanvas() {
+                    canvas.width = canvas.parentElement.clientWidth;
+                    canvas.height = canvas.parentElement.clientHeight;
+                    initParticles(); // Re-initialize particles on resize for better distribution
+                }
+
+                class Particle {
+                    constructor() {
+                        this.x = Math.random() * canvas.width;
+                        this.y = Math.random() * canvas.height;
+                        this.size = Math.random() * 2 + 0.5; // Small particles
+                        this.speedX = Math.random() * 0.5 - 0.25; // Slow movement
+                        this.speedY = Math.random() * 0.5 - 0.25;
+                        this.color = `${particleColor} ${Math.random() * 0.5 + 0.2})`; // Color with varying opacity
+                    }
+
+                    update() {
+                        this.x += this.speedX;
+                        this.y += this.speedY;
+
+                        // Bounce off edges
+                        if (this.x > canvas.width || this.x < 0) this.speedX *= -1;
+                        if (this.y > canvas.height || this.y < 0) this.speedY *= -1;
+                    }
+
+                    draw() {
+                        ctx.fillStyle = this.color;
+                        ctx.beginPath();
+                        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                        ctx.fill();
+                    }
+                }
+
+                function initParticles() {
+                    particles = [];
+                    for (let i = 0; i < particleCount; i++) {
+                        particles.push(new Particle());
+                    }
+                }
+
+                function connectParticles() {
+                    for (let a = 0; a < particles.length; a++) {
+                        for (let b = a; b < particles.length; b++) {
+                            const distance = Math.sqrt(
+                                ((particles[a].x - particles[b].x) * (particles[a].x - particles[b].x)) +
+                                ((particles[a].y - particles[b].y) * (particles[a].y - particles[b].y))
+                            );
+
+                            if (distance < maxDistance) {
+                                ctx.strokeStyle = `${particleColor} ${1 - (distance / maxDistance) * 0.8})`; // Fade lines
+                                ctx.lineWidth = 0.5; // Thin lines
+                                ctx.beginPath();
+                                ctx.moveTo(particles[a].x, particles[a].y);
+                                ctx.lineTo(particles[b].x, particles[b].y);
+                                ctx.stroke();
+                            }
+                        }
+                    }
+                }
+
+                function animateParticles() {
+                    ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear canvas
+                    for (let i = 0; i < particles.length; i++) {
+                        particles[i].update();
+                        particles[i].draw();
+                    }
+                    connectParticles();
+                    animationFrameId = requestAnimationFrame(animateParticles);
+                }
+
+                // Initial setup and event listeners
+                resizeCanvas(); // Set initial size
+                initParticles(); // Initialize particles
+                animateParticles(); // Start animation loop
+
+                window.addEventListener('resize', resizeCanvas);
+
+                // Return a cleanup function if needed
+                return () => {
+                    cancelAnimationFrame(animationFrameId);
+                    window.removeEventListener('resize', resizeCanvas);
+                };
+            }
+
+            // Call particle animation for services page hero section
+            createParticleAnimation('services-particles-canvas');
+        });
+    </script>
+
+</body>
+</html>
