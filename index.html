@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cytrust Advisory - Cybersecurity Consulting & Mentorship</title>
-    <!-- Favicon -->
-    <link rel="icon" href="assets/logo 3.png" type="image/png">
+    <!-- Favicon - UPDATED LOGO PATH -->
+    <link rel="icon" href="assets/cytrust official logo.png" type="image/png">
     <!-- Load Tailwind CSS for utility-first styling -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Font Awesome for social icons -->
@@ -159,7 +159,7 @@
 
         /* Hover effect for service cards (already has scale, adding subtle shadow shift) */
         .service-card-hover:hover {
-            box-shadow: 0 15px 35px -8px rgba(0, 0, 0, 0.3), 0 10px 15px -7px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 15px 30px -8px rgba(0, 0, 0, 0.3), 0 10px 15px -7px rgba(0, 0, 0, 0.2);
         }
 
         /* Button Hover Glow Effect */
@@ -396,11 +396,11 @@
             transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
         }
         .core-offering-card:hover {
-            background-color: rgba(176, 190, 197, 0.4); /* Polished Silver with 40% opacity (transparent) */
+            background-color: var(--color-primary-deep-midnight-blue); /* Changed to Midnight Blue */
         }
         .core-offering-card:hover h3,
         .core-offering-card:hover p {
-            color: var(--color-primary-deep-midnight-blue); /* Midnight blue for text */
+            color: var(--color-secondary-cyber-teal); /* Changed to Cyber Teal */
         }
         /* Ensure the border and shadow are maintained or enhanced on hover */
         .core-offering-card:hover {
@@ -415,9 +415,9 @@
         <nav class="container mx-auto flex justify-between items-center px-4 border-b border-cyber-teal pb-4">
             <!-- Logo and Company Name Group -->
             <div class="flex items-center space-x-3">
-                <!-- "CA" Logo Image - Using logo 3.png for contrast -->
+                <!-- "CA" Logo Image - UPDATED PATH -->
                 <a href="index.html" class="flex items-center space-x-3 group">
-                    <img src="assets/logo 3.png" alt="Cytrust Advisory CA Logo" class="h-12 w-12 object-contain">
+                    <img src="assets/cytrust official logo.png" alt="Cytrust Advisory Logo" class="h-12 w-12 object-contain">
                     <!-- "Cytrust Advisory" text using Montserrat font, adjusted size -->
                     <div class="text-xl font-bold text-cyber-teal font-montserrat">Cytrust Advisory</div>
                 </a>
@@ -548,7 +548,7 @@
                             <p class="testimonial-text">
                                 "Cytrust Advisory transformed our approach to GRC. Their expertise and practical solutions were invaluable in navigating complex compliance requirements. Highly recommend!"
                             </p>
-                            <p class="testimonial-author">Jane Doe</p>
+                            <p class="testimonial-author">Alex Rivera</p>
                             <p class="testimonial-title">CEO, Tech Solutions Inc.</p>
                         </div>
                         <!-- Testimonial 2 -->
@@ -556,15 +556,15 @@
                             <p class="testimonial-text">
                                 "The security awareness training was a game-changer for our team. Engaging, informative, and directly applicable. Our human firewall is stronger than ever."
                             </p>
-                            <p class="testimonial-author">John Smith</p>
-                            <p class="testimonial-title">Operations Manager, Global Corp</p>
+                            <p class="testimonial-author">Afolabi Soaga</p>
+                            <p class="testimonial-title">Operations Manager, Yoda</p>
                         </div>
                         <!-- Testimonial 3 -->
                         <div class="testimonial-slide">
                             <p class="testimonial-text">
                                 "As an aspiring cybersecurity professional, the mentorship program provided clarity and actionable steps for my career. The 1-on-1 coaching was particularly impactful."
                             </p>
-                            <p class="testimonial-author">Emily White</p>
+                            <p class="testimonial-author">Emily Sanders</p>
                             <p class="testimonial-title">Cybersecurity Analyst</p>
                         </div>
                         <!-- Testimonial 4 -->
@@ -620,12 +620,9 @@
             <!-- Column 1: Logo and Short Description -->
             <div class="flex flex-col items-center md:items-start">
                 <a href="index.html" class="flex items-center space-x-3 mb-4 group">
-                    <img src="assets/logo 3.png" alt="Cytrust Advisory CA Logo" class="h-10 w-10 object-contain">
+                    <img src="assets/cytrust official logo.png" alt="Cytrust Advisory Logo" class="h-10 w-10 object-contain">
                     <div class="text-xl font-bold text-cyber-teal font-montserrat">Cytrust Advisory</div>
                 </a>
-                <p class="text-polished-silver text-sm leading-relaxed">
-                    Empowering cybersecurity confidence through expert consulting, engaging training, and practical mentorship.
-                </p>
             </div>
 
             <!-- Column 2: Quick Links -->
@@ -640,29 +637,33 @@
                 </ul>
             </div>
 
-            <!-- Column 3: Contact & Social -->
+            <!-- Column 3: Contact & Connect -->
             <div>
                 <h3 class="text-xl font-semibold text-cyber-teal mb-4">Contact & Connect</h3>
-                <div class="space-y-2 text-polished-silver">
-                    <p class="flex items-center justify-center md:justify-start space-x-2">
+                <ul class="space-y-2 text-polished-silver">
+                    <li class="flex items-center justify-center md:justify-start space-x-2">
+                        <i class="fas fa-envelope text-cyber-teal"></i>
+                        <span>info@cytrustadvisory.ca</span>
+                    </li>
+                    <li class="flex items-center justify-center md:justify-start space-x-2">
+                        <i class="fas fa-phone-alt text-cyber-teal"></i>
+                        <span>(403) 879-5365</span> <!-- Placeholder Phone Number -->
+                    </li>
+                    <li class="flex items-center justify-center md:justify-start space-x-2">
                         <i class="fas fa-map-marker-alt text-cyber-teal"></i>
                         <span>337 194 Ave SW Calgary, Alberta, Canada</span>
-                    </p>
-                    <p class="flex items-center justify-center md:justify-start space-x-2">
-                        <i class="fas fa-phone text-cyber-teal"></i>
-                        <span>+1 (368) 399-4114</span>
-                    </p>
-                    <p class="flex items-center justify-center md:justify-start space-x-2">
-                        <i class="fas fa-envelope text-cyber-teal"></i>
-                        <a href="mailto:info@cytrustadvisory.com" class="hover:text-cyber-teal transition-colors duration-300">info@cytrustadvisory.com</a>
-                    </p>
+                    </li>
+                </ul>
+                <div class="flex justify-center md:justify-start space-x-4 mt-6">
+                    <a href="#" class="text-polished-silver hover:text-cyber-teal transition-colors duration-300" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin fa-2x"></i>
+                    </a>
+                 
                 </div>
-                <!-- Removed social media icons as requested -->
             </div>
         </div>
-
-        <div class="container mx-auto border-t border-dark-ash-gray pt-8 mt-8 text-center text-polished-silver text-sm">
-            <p>&copy; 2025 Cytrust Advisory. All rights reserved.</p>
+        <div class="text-center text-polished-silver text-sm mt-8 pt-8 border-t border-dark-ash-gray">
+            &copy; <span id="current-year"></span> Cytrust Advisory. All rights reserved.
             <div class="mt-2 space-x-4">
                 <a href="#" class="hover:text-cyber-teal transition-colors duration-300">Privacy Policy</a>
                 <span class="text-dark-ash-gray">|</span>
@@ -723,6 +724,106 @@
                 });
             });
 
+            // --- Testimonial Carousel JavaScript ---
+            function initializeTestimonialCarousel() {
+                const testimonialTrack = document.getElementById('testimonial-track');
+                const prevButton = document.getElementById('prev-testimonial');
+                const nextButton = document.getElementById('next-testimonial');
+                const dotsContainer = document.getElementById('carousel-dots');
+
+                // DEBUG: Check if elements are found
+                console.log("Initializing carousel...");
+                console.log("testimonialTrack:", testimonialTrack);
+                console.log("prevButton:", prevButton);
+                console.log("nextButton:", nextButton);
+                console.log("dotsContainer:", dotsContainer);
+
+
+                // Check if all necessary elements exist before proceeding
+                if (!testimonialTrack || !prevButton || !nextButton || !dotsContainer) {
+                    console.error("Carousel elements not found. Skipping carousel initialization."); // Changed to error
+                    return;
+                }
+
+                const slides = Array.from(testimonialTrack.children);
+                let currentIndex = 0;
+                let slideWidth = 0; // Initialize slideWidth here
+
+                // Function to update carousel position
+                function updateCarousel() {
+                    // Recalculate slideWidth every time to ensure responsiveness
+                    if (slides.length > 0) {
+                        slideWidth = slides[0].offsetWidth; // Get the current width of a slide
+                        // DEBUG: Log slideWidth
+                        console.log("Calculated slideWidth:", slideWidth);
+                        if (slideWidth === 0) {
+                            console.warn("slideWidth is 0. Carousel might not move correctly. Check CSS/layout.");
+                        }
+                    } else {
+                        console.warn("No slides found in testimonialTrack.");
+                        return;
+                    }
+
+                    testimonialTrack.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+                    updateDots();
+                }
+
+                // Function to update active dot
+                function updateDots() {
+                    document.querySelectorAll('.dot').forEach((dot, index) => {
+                        dot.classList.toggle('active', index === currentIndex);
+                    });
+                }
+
+                // Event Listeners for navigation buttons
+                prevButton.addEventListener('click', () => {
+                    console.log("Prev button clicked."); // DEBUG
+                    currentIndex = (currentIndex > 0) ? currentIndex - 1 : slides.length - 1;
+                    updateCarousel();
+                });
+
+                nextButton.addEventListener('click', () => {
+                    console.log("Next button clicked."); // DEBUG
+                    currentIndex = (currentIndex < slides.length - 1) ? currentIndex + 1 : 0;
+                    updateCarousel();
+                });
+
+                // Event Listeners for dots
+                dotsContainer.addEventListener('click', (e) => {
+                    if (e.target.classList.contains('dot')) {
+                        console.log("Dot clicked:", e.target.dataset.slide); // DEBUG
+                        currentIndex = parseInt(e.target.dataset.slide);
+                        updateCarousel();
+                    }
+                });
+
+                // Auto-slide functionality
+                let autoSlideInterval = setInterval(() => {
+                    currentIndex = (currentIndex < slides.length - 1) ? currentIndex + 1 : 0;
+                    updateCarousel();
+                }, 5000); // Change slide every 5 seconds
+
+                // Pause auto-slide on hover
+                testimonialTrack.addEventListener('mouseenter', () => clearInterval(autoSlideInterval));
+                testimonialTrack.addEventListener('mouseleave', () => {
+                    autoSlideInterval = setInterval(() => {
+                        currentIndex = (currentIndex < slides.length - 1) ? currentIndex + 1 : 0;
+                        updateCarousel();
+                    }, 5000);
+                });
+
+                // Update carousel on window resize
+                window.addEventListener('resize', () => {
+                    console.log("Window resized. Updating carousel."); // DEBUG
+                    updateCarousel(); // Calls updateCarousel which recalculates slideWidth
+                });
+
+                // Initial setup for carousel after all elements are loaded and rendered
+                // Use a slight delay to ensure all CSS and content have rendered
+                setTimeout(updateCarousel, 500); // Increased delay to 500ms for robustness
+            }
+
+
             // --- Particle Background Animation JavaScript ---
             function createParticleAnimation(canvasId, particleColor = 'rgba(0, 206, 209,', particleCount = 70, maxDistance = 120) {
                 const canvas = document.getElementById(canvasId);
@@ -757,6 +858,13 @@
                         // Bounce off edges
                         if (this.x > canvas.width || this.x < 0) this.speedX *= -1;
                         if (this.y > canvas.height || this.y < 0) this.speedY *= -1;
+
+                        // Optional: reset particle if it goes too far
+                        if (this.x < -this.size || this.x > canvas.width + this.size ||
+                            this.y < -this.size || this.y > canvas.height + this.size) {
+                            this.x = Math.random() * canvas.width;
+                            this.y = Math.random() * canvas.height;
+                        }
                     }
 
                     draw() {
@@ -823,8 +931,13 @@
 
             // Call particle animation for Why Choose Us section
             createParticleAnimation('why-choose-us-particles-canvas');
-        });
-    </script>
 
+            // Initialize testimonial carousel after all elements are loaded
+            initializeTestimonialCarousel(); // Call the encapsulated function
+        });
+
+        // Update current year in footer
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
 </body>
 </html>
