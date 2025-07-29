@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us - Cytrust Advisory</title>
+    <title>Privacy Policy - Cytrust Advisory</title>
     <!-- Favicon -->
     <link rel="icon" href="assets/cytrust_official_logo.png" type="image/png">
     <!-- Load Tailwind CSS for utility-first styling -->
@@ -23,7 +23,6 @@
         }
         body {
             font-family: 'Lato', sans-serif;
-            /* Apply the new Light Mist background color */
             background-color: var(--color-background-light-mist); /* Light Mist */
         }
 
@@ -43,7 +42,7 @@
         .text-dark-ash-gray { color: var(--color-accent2-dark-ash-gray); }
         .bg-light-mist { background-color: var(--color-background-light-mist); }
 
-        /* Hero Section Styling (for consistency with Home Page) */
+        /* Hero Section Styling (for consistency with internal pages) */
         .hero-section-page-banner {
             background-color: var(--color-primary-deep-midnight-blue);
             background-image:
@@ -84,31 +83,6 @@
             max-height: 300px;
         }
 
-        /* Call to Action Section with Diagonal Top Edge (now with hero background) */
-        /* Changed to cta-section-straight for a straight top edge */
-        .cta-section-straight {
-            background-image:
-                linear-gradient(to bottom, rgba(26, 42, 64, 0.95) 0%, rgba(26, 42, 64, 0.7) 100%), /* Stronger, subtle gradient overlay */
-                url('assets/your-cyber-background.jpg'); /* Direct path to your abstract tech image */
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed; /* Creates a subtle parallax effect */
-            background-blend-mode: overlay; /* Blends the image with the gradient */
-            position: relative;
-            padding-top: 6rem;
-            padding-bottom: 4rem;
-            /* clip-path: polygon(0 8%, 100% 0, 100% 100%, 0% 100%); Removed for straight edge */
-            margin-top: -4rem;
-            z-index: 10;
-        }
-        @media (max-width: 768px) {
-            .cta-section-straight {
-                margin-top: -2rem;
-                padding-top: 4rem;
-                background-attachment: scroll; /* Disable fixed attachment on mobile for performance */
-            }
-        }
-
         /* --- Styles for Scroll Animations (Consistent) --- */
         .fade-in-section {
             opacity: 0;
@@ -128,53 +102,6 @@
         .fade-in-section > *:nth-child(2) { transition-delay: 0.2s; }
         .fade-in-section > *:nth-child(3) { transition-delay: 0.3s; }
         .fade-in-section > *:nth-child(4) { transition-delay: 0.4s; }
-        /* You can extend this for more children or use different approaches */
-
-        /* --- NEW: Enhanced Shadows and Button Hover Effects (Consistent) --- */
-
-        /* Deeper, more refined shadow for cards/boxes */
-        .shadow-premium {
-            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.2), 0 8px 10px -6px rgba(0, 0, 0, 0.15);
-        }
-
-        /* Hover effect for service cards (already has scale, adding subtle shadow shift) */
-        .service-card-hover:hover {
-            box-shadow: 0 15px 35px -8px rgba(0, 0, 0, 0.3), 0 10px 15px -7px rgba(0, 0, 0, 0.2);
-        }
-
-        /* Button Hover Glow Effect */
-        .btn-glow-hover {
-            position: relative;
-            overflow: hidden; /* Ensures glow doesn't overflow button */
-            z-index: 1; /* Ensures button content is above glow */
-        }
-
-        .btn-glow-hover::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 0;
-            height: 0;
-            background: radial-gradient(circle, var(--color-secondary-cyber-teal) 0%, transparent 70%);
-            opacity: 0;
-            transform: translate(-50%, -50%);
-            transition: width 0.4s ease-out, height 0.4s ease-out, opacity 0.4s ease-out;
-            z-index: -1; /* Puts glow behind button content */
-        }
-
-        .btn-glow-hover:hover::before {
-            width: 200%; /* Expand glow */
-            height: 200%; /* Expand glow */
-            opacity: 0.3; /* Make glow visible */
-        }
-
-        /* Alternative button hover for main CTA (subtle scale and darker background) */
-        .btn-main-cta:hover {
-            transform: scale(1.03); /* Slightly more pronounced scale */
-            background-color: var(--color-secondary-cyber-teal); /* Ensure consistent teal on hover */
-            box-shadow: 0 8px 20px rgba(0, 206, 209, 0.4); /* Add a teal-tinted shadow */
-        }
 
         /* --- Back to Top Button Styles --- */
         #back-to-top {
@@ -213,39 +140,57 @@
             height: 1.5rem;
         }
 
-        /* --- Particle Canvas Styles for Hero Section --- */
-        .particle-canvas {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 0; /* Behind content */
-            pointer-events: none; /* Allow clicks to pass through */
-        }
-
-        /* Ensure hero content is above the canvas */
-        .hero-banner-content {
-            position: relative;
-            z-index: 1;
-        }
-
         /* --- Footer Specific Styles --- */
         .footer-link-hover:hover {
             color: var(--color-secondary-cyber-teal);
             transform: translateX(5px);
         }
 
-        /* Specific styles for "What We Do" cards hover */
-        .what-we-do-card {
-            transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        /* Content section specific styling */
+        .policy-content {
+            background-color: white;
+            padding: 2.5rem;
+            border-radius: 1rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            line-height: 1.8;
+            color: var(--color-dark-ash-gray);
         }
-        .what-we-do-card:hover {
-            background-color: rgba(176, 190, 197, 0.4); /* Polished Silver with 40% opacity (transparent) */
+        .policy-content h2 {
+            font-size: 2.25rem; /* Large heading for sections */
+            font-weight: 700;
+            color: var(--color-primary-deep-midnight-blue);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--color-accent1-polished-silver);
         }
-        .what-we-do-card:hover h3,
-        .what-we-do-card:hover p {
-            color: var(--color-primary-deep-midnight-blue); /* Midnight blue for text */
+        .policy-content h3 {
+            font-size: 1.75rem; /* Sub-headings */
+            font-weight: 600;
+            color: var(--color-primary-deep-midnight-blue);
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+        .policy-content p, .policy-content ul, .policy-content ol {
+            margin-bottom: 1.25rem;
+        }
+        .policy-content ul, .policy-content ol {
+            list-style-position: inside;
+            padding-left: 1.5rem;
+        }
+        .policy-content ul li {
+            list-style-type: disc;
+            margin-bottom: 0.5rem;
+        }
+        .policy-content ol li {
+            list-style-type: decimal;
+            margin-bottom: 0.5rem;
+        }
+        .policy-content a {
+            color: var(--color-secondary-cyber-teal);
+            text-decoration: underline;
+        }
+        .policy-content a:hover {
+            color: var(--color-primary-deep-midnight-blue);
         }
     </style>
 </head>
@@ -255,10 +200,8 @@
         <nav class="container mx-auto flex justify-between items-center px-4 border-b border-cyber-teal pb-4">
             <!-- Logo and Company Name Group -->
             <div class="flex items-center space-x-3">
-                <!-- "CA" Logo Image - Using logo 3.png for contrast -->
                 <a href="index.html" class="flex items-center space-x-3 group">
-                    <img src="assets/cytrust_official_logo.png" alt="Cytrust Advisory CA Logo" class="h-12 w-12 object-contain">
-                    <!-- "Cytrust Advisory" text using Montserrat font, adjusted size -->
+                    <img src="assets/cytrust_official_logo.png" alt="Cytrust Advisory Logo" class="h-12 w-12 object-contain">
                     <div class="text-xl font-bold text-cyber-teal font-montserrat">Cytrust Advisory</div>
                 </a>
             </div>
@@ -270,22 +213,21 @@
                 </svg>
             </button>
 
-            <!-- Desktop Navigation Links - UPDATED LINKS -->
+            <!-- Desktop Navigation Links -->
             <div class="hidden md:flex space-x-8">
-                <!-- Added border-transparent and hover:border-cyber-teal for button-like hover effect -->
                 <a href="index.html" class="text-white hover:text-cyber-teal px-3 py-2 rounded-md transition-all duration-300 border border-transparent hover:border-cyber-teal hover:bg-gray-800 hover:bg-opacity-20">Home</a>
-                <a href="about.html" class="text-cyber-teal px-3 py-2 rounded-md transition-all duration-300 border border-transparent hover:border-cyber-teal hover:bg-gray-800 hover:bg-opacity-20">About Us</a> <!-- Active link for About Us -->
+                <a href="about.html" class="text-white hover:text-cyber-teal px-3 py-2 rounded-md transition-all duration-300 border border-transparent hover:border-cyber-teal hover:bg-gray-800 hover:bg-opacity-20">About Us</a>
                 <a href="services.html" class="text-white hover:text-cyber-teal px-3 py-2 rounded-md transition-all duration-300 border border-transparent hover:border-cyber-teal hover:bg-gray-800 hover:bg-opacity-20">Services</a>
                 <a href="mentorship.html" class="text-white hover:text-cyber-teal px-3 py-2 rounded-md transition-all duration-300 border border-transparent hover:border-cyber-teal hover:bg-gray-800 hover:bg-opacity-20">Mentorship</a>
                 <a href="contact.html" class="text-white hover:text-cyber-teal px-3 py-2 rounded-md transition-all duration-300 border border-transparent hover:border-cyber-teal hover:bg-gray-800 hover:bg-opacity-20">Contact</a>
             </div>
         </nav>
 
-        <!-- Mobile Navigation Menu (hidden by default) - UPDATED LINKS -->
+        <!-- Mobile Navigation Menu (hidden by default) -->
         <div id="mobile-menu" class="md:hidden bg-deep-midnight-blue pb-4">
             <div class="flex flex-col items-center space-y-4 px-4">
                 <a href="index.html" class="block text-white hover:text-cyber-teal py-2 transition-colors duration-300 w-full text-center">Home</a>
-                <a href="about.html" class="block text-cyber-teal py-2 transition-colors duration-300 w-full text-center">About Us</a> <!-- Active link for About Us -->
+                <a href="about.html" class="block text-white hover:text-cyber-teal py-2 transition-colors duration-300 w-full text-center">About Us</a>
                 <a href="services.html" class="block text-white hover:text-cyber-teal py-2 transition-colors duration-300 w-full text-center">Services</a>
                 <a href="mentorship.html" class="block text-white hover:text-cyber-teal py-2 transition-colors duration-300 w-full text-center">Mentorship</a>
                 <a href="contact.html" class="block text-white hover:text-cyber-teal py-2 transition-colors duration-300 w-full text-center">Contact</a>
@@ -294,189 +236,119 @@
     </header>
 
     <main>
-        <!-- About Us Hero/Banner Section -->
+        <!-- Privacy Policy Page Banner Section -->
         <section class="hero-section-page-banner">
-            <!-- Canvas for particle animation -->
-            <canvas id="about-particles-canvas" class="particle-canvas"></canvas>
-
             <div class="container mx-auto max-w-4xl hero-banner-content">
                 <h1 class="text-5xl md:text-6xl font-extrabold leading-tight mb-4 text-cyber-teal">
-                    About Cytrust Advisory
+                    Privacy Policy
                 </h1>
                 <p class="text-lg md:text-xl text-polished-silver leading-relaxed">
-                    Empowering organizations and individuals to confidently manage cybersecurity risks and compliance requirements.
+                    Your privacy is critically important to us.
                 </p>
             </div>
         </section>
 
-        <!-- Introduction, Mission & Vision Section - ADDED fade-in-section class -->
-        <section class="container mx-auto py-16 px-4 fade-in-section">
-            <div class="max-w-4xl mx-auto">
-                <h2 class="text-4xl font-bold text-deep-midnight-blue mb-8 text-center">
-                    Who We Are
-                </h2>
+        <!-- Privacy Policy Content Section -->
+        <section class="py-16 px-4 bg-light-mist fade-in-section">
+            <div class="container mx-auto max-w-4xl policy-content">
+                <p class="text-sm text-right text-dark-ash-gray mb-6">Last updated: July 29, 2025</p>
 
-                <p class="text-dark-ash-gray text-lg leading-relaxed mb-8">
-                    Cytrust Advisory is a leading cybersecurity consulting firm dedicated to fortifying digital defenses and fostering a culture of security. With a deep understanding of evolving threats and regulatory landscapes, we empower businesses and individuals to navigate the complexities of the cyber world with confidence and resilience.
+                <p>
+                    Cytrust Advisory ("us", "we", or "our") operates the cytrustadvisory.ca website (the "Service").
+                </p>
+                <p>
+                    This page informs you of our policies regarding the collection, use, and disclosure of Personal Information when you use our Service.
+                </p>
+                <p>
+                    We will not use or share your information with anyone except as described in this Privacy Policy.
+                </p>
+                <p>
+                    We use your Personal Information for providing and improving the Service. By using the Service, you agree to the collection and use of information in accordance with this policy. Unless otherwise defined in this Privacy Policy, terms used in this Privacy Policy have the same meanings as in our <a href="terms-of-service.html">Terms and Conditions</a>.
                 </p>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-                    <div>
-                        <h3 class="text-3xl font-semibold text-cyber-teal mb-4">Our Mission</h3>
-                        <p class="text-dark-ash-gray leading-relaxed text-justify">
-                            To empower organizations and individuals with the knowledge, tools, and strategies to confidently manage cybersecurity risks and achieve compliance, ensuring a secure digital future.
-                        </p>
-                    </div>
-                    <div>
-                        <h3 class="text-3xl font-semibold text-cyber-teal mb-4">Our Vision</h3>
-                        <p class="text-dark-ash-gray leading-relaxed text-justify">
-                            To be the most trusted and impactful advisory partner in cybersecurity, recognized for our integrity, innovative solutions, and unwavering commitment to client success and digital resilience.
-                        </p>
-                    </div>
-                </div>
+                <h2>Information Collection And Use</h2>
+                <p>
+                    While using our Service, we may ask you to provide us with certain personally identifiable information that can be used to contact or identify you. Personally identifiable information ("Personal Information") may include, but is not limited to:
+                </p>
+                <ul>
+                    <li>Name</li>
+                    <li>Email address</li>
+                    <li>Phone number</li>
+                    <li>Usage Data (e.g., IP address, browser type, pages visited)</li>
+                </ul>
 
-                <h2 class="text-4xl font-bold text-deep-midnight-blue mb-8 text-center">
-                    What We Do
-                </h2>
-                <p class="text-dark-ash-gray text-lg leading-relaxed mb-8 text-center">
-                    We offer comprehensive solutions tailored to meet diverse cybersecurity needs.
+                <h2>Log Data</h2>
+                <p>
+                    We collect information that your browser sends whenever you visit our Service ("Log Data"). This Log Data may include information such as your computer's Internet Protocol ("IP") address, browser type, browser version, the pages of our Service that you visit, the time and date of your visit, the time spent on those pages, and other statistics.
                 </p>
 
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <!-- Service 1: GRC/Cybersecurity Consulting - ADDED shadow-premium & what-we-do-card classes -->
-                    <div class="bg-white p-6 rounded-lg shadow-md flex flex-col items-center text-center shadow-premium what-we-do-card">
-                        <!-- Removed SVG icon as requested -->
-                        <h3 class="text-xl font-semibold text-deep-midnight-blue mb-2">GRC/Cybersecurity Consulting</h3>
-                        <p class="text-dark-ash-gray text-sm">
-                            Expert guidance on governance, risk management, and compliance frameworks.
-                        </p>
-                    </div>
-
-                    <!-- Service 2: Security Awareness Training - ADDED shadow-premium & what-we-do-card classes -->
-                    <div class="bg-white p-6 rounded-lg shadow-md flex flex-col items-center text-center shadow-premium what-we-do-card">
-                        <!-- Removed SVG icon as requested -->
-                        <h3 class="text-xl font-semibold text-deep-midnight-blue mb-2">Security Awareness Training</h3>
-                        <p class="text-dark-ash-gray text-sm">
-                            Engaging programs to build a strong human firewall within your organization.
-                        </p>
-                    </div>
-
-                    <!-- Service 3: Paid Mentorship - ADDED shadow-premium & what-we-do-card classes -->
-                    <div class="bg-white p-6 rounded-lg shadow-md flex flex-col items-center text-center shadow-premium what-we-do-card">
-                        <!-- Removed SVG icon as requested -->
-                        <h3 class="text-xl font-semibold text-deep-midnight-blue mb-2">Paid Mentorship</h3>
-                        <p class="text-dark-ash-gray text-sm">
-                            Structured programs and 1-on-1 coaching for aspiring cybersecurity professionals.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Core Values (WECARE) Section - ADDED fade-in-section class, shadow-premium & service-card-hover classes to value cards -->
-        <section class="bg-deep-midnight-blue py-16 px-4 text-white fade-in-section">
-            <div class="container mx-auto max-w-4xl text-center">
-                <h2 class="text-4xl font-bold text-cyber-teal mb-12">Our Core Values: WeCare</h2>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Value 1: Work Together (W) -->
-                    <div class="p-6 rounded-lg bg-deep-midnight-blue border border-cyber-teal shadow-xl flex flex-col items-center text-center shadow-premium service-card-hover">
-                        <div class="text-polished-silver mb-4">
-                            <svg class="w-16 h-16 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H2C3.58 18.005 5.835 17 8.25 17h.007M12 10.5a3.5 3.5 0 11-7 0 3.5 3.5 0 017 0zm8 0a3.5 3.5 0 11-7 0 3.5 3.5 0 017 0z"></path>
-                            </svg>
-                        </div>
-                        <h3 class="text-2xl font-semibold text-cyber-teal mb-2">Work Together</h3>
-                        <p class="text-polished-silver leading-relaxed">
-                            Fostering strong partnerships with clients and within our team to achieve shared security goals.
-                        </p>
-                    </div>
-
-                    <!-- Value 2: Empowerment (E) -->
-                    <div class="p-6 rounded-lg bg-deep-midnight-blue border border-cyber-teal shadow-xl flex flex-col items-center text-center shadow-premium service-card-hover">
-                        <div class="text-polished-silver mb-4">
-                            <svg class="w-16 h-16 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-                            </svg>
-                        </div>
-                        <h3 class="text-2xl font-semibold text-cyber-teal mb-2">Empowerment</h3>
-                        <p class="text-polished-silver leading-relaxed">
-                            Equipping our clients and mentees with the knowledge and tools to manage their own risk.
-                        </p>
-                    </div>
-
-                    <!-- Value 3: Commitment (C) -->
-                    <div class="p-6 rounded-lg bg-deep-midnight-blue border border-cyber-teal shadow-xl flex flex-col items-center text-center shadow-premium service-card-hover">
-                        <div class="text-polished-silver mb-4">
-                            <svg class="w-16 h-16 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.007 12.007 0 002 12c0 2.755 1.09 5.249 2.893 7.167.476.533 1.005.992 1.574 1.396A11.987 11.987 0 0012 22c2.981 0 5.724-1.11 7.757-2.944.569-.404 1.098-.863 1.574-1.396C22.91 17.249 24 14.755 24 12c0-2.755-1.09-5.249-2.893-7.167z"></path>
-                            </svg>
-                        </div>
-                        <h3 class="text-2xl font-semibold text-cyber-teal mb-2">Commitment</h3>
-                        <p class="text-polished-silver leading-relaxed">
-                            Dedicated to delivering exceptional service and achieving tangible security outcomes.
-                        </p>
-                    </div>
-
-                    <!-- Value 4: Adaptability (A) -->
-                    <div class="p-6 rounded-lg bg-deep-midnight-blue border border-cyber-teal shadow-xl flex flex-col items-center text-center shadow-premium service-card-hover">
-                        <div class="text-polished-silver mb-4">
-                            <svg class="w-16 h-16 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"></path>
-                            </svg>
-                        </div>
-                        <h3 class="text-2xl font-semibold text-cyber-teal mb-2">Adaptability</h3>
-                        <p class="text-polished-silver leading-relaxed">
-                            Continuously evolving our strategies to counter emerging threats and regulatory changes.
-                        </p>
-                    </div>
-
-                    <!-- Value 5: Responsibility (R) -->
-                    <div class="p-6 rounded-lg bg-deep-midnight-blue border border-cyber-teal shadow-xl flex flex-col items-center text-center shadow-premium service-card-hover">
-                        <div class="text-polished-silver mb-4">
-                            <svg class="w-16 h-16 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M17 16l-3 3-1-1"></path>
-                            </svg>
-                        </div>
-                        <h3 class="text-2xl font-semibold text-cyber-teal mb-2">Responsibility</h3>
-                        <p class="text-polished-silver leading-relaxed">
-                            Taking ownership of our actions and their impact on client security and success.
-                        </p>
-                    </div>
-
-                    <!-- Value 6: Excellence (E) -->
-                    <div class="p-6 rounded-lg bg-deep-midnight-blue border border-cyber-teal shadow-xl flex flex-col items-center text-center shadow-premium service-card-hover">
-                        <div class="text-polished-silver mb-4">
-                            <svg class="w-16 h-16 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 13l4 4L19 7"></path>
-                            </svg>
-                        </div>
-                        <h3 class="text-2xl font-semibold text-cyber-teal mb-2">Excellence</h3>
-                        <p class="text-polished-silver leading-relaxed">
-                            Striving for the highest quality in all our services, from strategy to execution.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Call to Action Section (consistent with other pages) - ADDED fade-in-section class & btn-main-cta class to button -->
-        <section class="cta-section-straight text-white py-16 px-4 text-center fade-in-section">
-            <div class="container mx-auto max-w-3xl">
-                <h2 class="text-4xl md:text-5xl font-bold leading-tight mb-6 text-white">
-                    Ready to Partner with Cytrust Advisory?
-                </h2>
-                <p class="text-lg md:text-xl mb-8 text-white">
-                    Connect with us today to discuss your cybersecurity needs and how we can empower your digital future.
+                <h2>Cookies</h2>
+                <p>
+                    Cookies are files with a small amount of data, which may include an anonymous unique identifier. Cookies are sent to your browser from a web site and stored on your computer's hard drive.
                 </p>
-                <a href="contact.html" class="bg-cyber-teal text-white font-bold py-3 px-8 rounded-full text-lg transition-all duration-300 transform inline-block btn-main-cta border border-white">
-                    Schedule a Consultation
-                </a>
+                <p>
+                    We use "cookies" to collect information. You can instruct your browser to refuse all cookies or to indicate when a cookie is being sent. However, if you do not accept cookies, you may not be able to use some portions of our Service.
+                </p>
+
+                <h2>Service Providers</h2>
+                <p>
+                    We may employ third party companies and individuals to facilitate our Service, to provide the Service on our behalf, to perform Service-related services or to assist us in analyzing how our Service is used.
+                </p>
+                <p>
+                    These third parties have access to your Personal Information only to perform these tasks on our behalf and are obligated not to disclose or use it for any other purpose.
+                </p>
+                <p>
+                    Specifically, we use the following third-party services that may collect user data:
+                    <ul>
+                        <li>**Formspree:** Used to collect contact form submissions (name, email, subject, message) and forward them to us.</li>
+                        <li>**Calendly:** Used for scheduling meetings, which may collect your name, email, and meeting preferences when you use their booking interface.</li>
+                        <li>**Google Analytics:** Used to track website usage and traffic patterns, which may collect anonymized IP addresses and browsing behavior. This helps us understand how our website is used and improve it.</li>
+                    </ul>
+                </p>
+
+                <h2>Security</h2>
+                <p>
+                    The security of your Personal Information is important to us, but remember that no method of transmission over the Internet, or method of electronic storage is 100% secure. While we strive to use commercially acceptable means to protect your Personal Information, we cannot guarantee its absolute security.
+                </p>
+
+                <h2>Links To Other Sites</h2>
+                <p>
+                    Our Service may contain links to other sites that are not operated by us. If you click on a third party link, you will be directed to that third party's site. We strongly advise you to review the Privacy Policy of every site you visit.
+                </p>
+                <p>
+                    We have no control over, and assume no responsibility for the content, privacy policies or practices of any third party sites or services.
+                </p>
+
+                <h2>Children's Privacy</h2>
+                <p>
+                    Our Service does not address anyone under the age of 18 ("Children").
+                </p>
+                <p>
+                    We do not knowingly collect personally identifiable information from children under 18. If you are a parent or guardian and you are aware that your Children has provided us with Personal Information, please contact us. If we become aware that we have collected Personal Information from a child under age 18 without verification of parental consent, we take steps to remove that information from our servers.
+                </p>
+
+                <h2>Changes To This Privacy Policy</h2>
+                <p>
+                    We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page.
+                </p>
+                <p>
+                    You are advised to review this Privacy Policy periodically for any changes. Changes to this Privacy Policy are effective when they are posted on this page.
+                </p>
+
+                <h2>Contact Us</h2>
+                <p>
+                    If you have any questions about this Privacy Policy, please contact us:
+                </p>
+                <ul>
+                    <li>By email: info@cytrustadvisory.ca</li>
+                    <li>By visiting this page on our website: <a href="contact.html">Contact Us</a></li>
+                    <li>By phone: +1 (403) 879-5365</li>
+                </ul>
             </div>
         </section>
     </main>
 
-    <!-- NEW: Back to Top Button -->
+    <!-- Back to Top Button -->
     <button id="back-to-top" title="Go to top">
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
@@ -488,12 +360,9 @@
             <!-- Column 1: Logo and Short Description -->
             <div class="flex flex-col items-center md:items-start">
                 <a href="index.html" class="flex items-center space-x-3 mb-4 group">
-                    <img src="assets/cytrust_official_logo.png" alt="Cytrust Advisory CA Logo" class="h-10 w-10 object-contain">
+                    <img src="assets/cytrust_official_logo.png" alt="Cytrust Advisory Logo" class="h-10 w-10 object-contain">
                     <div class="text-xl font-bold text-cyber-teal font-montserrat">Cytrust Advisory</div>
                 </a>
-                <p class="text-polished-silver text-sm leading-relaxed">
-                    Empowering cybersecurity confidence through expert consulting, engaging training, and practical mentorship.
-                </p>
             </div>
 
             <!-- Column 2: Quick Links -->
@@ -527,17 +396,15 @@
                 </div>
 
                 <div class="flex justify-center md:justify-start space-x-4 mt-6">
-                    <a href="https://www.linkedin.com/company/cytrust-advisory" target="_blank" rel="noopener noreferrer" class="text-polished-silver hover:text-cyber-teal transition-colors duration-300 text-2xl">
+                    <a href="https://www.linkedin.com/company/cytrust-advisory" target="_blank" rel="noopener noreferrer" class="text-polished-silver hover:text-cyber-teal transition-colors duration-300 text-2xl" aria-label="LinkedIn">
                         <i class="fab fa-linkedin"></i>
                     </a>
-                  
                 </div>
-                <!-- Removed social media icons as requested -->
             </div>
         </div>
 
         <div class="container mx-auto border-t border-dark-ash-gray pt-8 mt-8 text-center text-polished-silver text-sm">
-            <p>&copy; 2025 Cytrust Advisory. All rights reserved.</p>
+            <p>&copy; <span id="current-year"></span> Cytrust Advisory. All rights reserved.</p>
             <div class="mt-2 space-x-4">
                 <a href="privacy-policy.html" class="hover:text-cyber-teal transition-colors duration-300">Privacy Policy</a>
                 <span class="text-dark-ash-gray">|</span>
@@ -693,10 +560,13 @@
                 };
             }
 
-            // Call particle animation for about page hero section
-            createParticleAnimation('about-particles-canvas');
+            // Call particle animation for contact page hero section
+            // Note: This canvas might not be present on this specific page, but the function is safe.
+            // createParticleAnimation('contact-particles-canvas'); // Removed as this is for privacy-policy page
         });
-    </script>
 
+        // Update current year in footer
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
 </body>
 </html>
